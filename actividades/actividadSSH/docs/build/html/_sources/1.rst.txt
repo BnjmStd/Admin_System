@@ -1,0 +1,10 @@
+Mi Programa
+===========
+
+Esta es la documentación para mi programa.
+
+Este programa sirve para:
+
+* Hacer algo
+* Hacer otra cosa
+* ...

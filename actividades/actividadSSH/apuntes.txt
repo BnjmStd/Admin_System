@@ -1,0 +1,20 @@
+10.1.1.222 mia
+
+
+debo cambiar la ip de mi maquina, crear un puente desde fuera de la maquina hacia la maquina
+
+
+
+
+
+En sphinx se debe colocar:
+
+instalacion 
+configuracion
+
+
+
+
+
+
+ 
