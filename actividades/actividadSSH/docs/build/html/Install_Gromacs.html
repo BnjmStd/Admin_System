@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="How To Install a Virtual Machine" href="first.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="How to compile CMAKE" href="Compilar_Cmake.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
-        <title>How to Do activity Virtual Machine 0.1 documentation</title>
+        <title>How to install Gromacs - How to Do activity Virtual Machine 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">How to Do activity Virtual Machine 0.1 documentation</div></a>
+      <a href="index.html"><div class="brand">How to Do activity Virtual Machine 0.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
   <span class="sidebar-brand-text">How to Do activity Virtual Machine 0.1 documentation</span>
@@ -155,7 +155,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="first.html">How To Install a Virtual Machine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="second.html">How To Configure a Virtual Machine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debianinstall.html">How To Install a Debian 11</a></li>
@@ -163,7 +163,7 @@
 <li class="toctree-l1"><a class="reference internal" href="kernel_linux.html">How to compile the GNU/Linux Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Compilar_GCC.html">How to compile GCC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Compilar_Cmake.html">How to compile CMAKE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Install_Gromacs.html">How to install Gromacs</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">How to install Gromacs</a></li>
 </ul>
 
 </div>
@@ -197,69 +197,41 @@
           </label>
         </div>
         <article role="main">
-          <section id="welcome-to-ssh-activity-s-documentation">
-<h1>Welcome to SSH_activity’s documentation  !<a class="headerlink" href="#welcome-to-ssh-activity-s-documentation" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="first.html">How To Install a Virtual Machine</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="first.html#kvm-kernel-virtual-machine">KVM – Kernel Virtual Machine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first.html#step-1-check-virtualization-support-in-ubuntu">Step 1: Check Virtualization Support in Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first.html#virt-manager">Virt-Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first.html#libvirt">libvirt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first.html#step-2-how-to-install-virt-manager">Step 2: How to install Virt-Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first.html#step-3-create-a-virtual-machine">Step 3: Create a virtual machine</a></li>
-</ul>
+          <section id="how-to-install-gromacs">
+<h1>How to install Gromacs<a class="headerlink" href="#how-to-install-gromacs" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>descargar gromacs</p></li>
+<li><p>Descomprimir usando tar xvf paquete</p></li>
+<li><p>Descargar regressiontest</p></li>
+<li><p>Descomprimir el regresssiontest y ponerlo sobre la path de gromacs</p></li>
+<li><dl class="simple">
+<dt>Ejecutar sobre el directorio descomprimido de gromacs:</dt><dd><p>mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/opt/gromacs/2020.5 -DGMX_MPI=on -DGMX_GPU=on -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpicxx -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_PATH=/opt/gromacs/</p>
+</dd>
+</dl>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="second.html">How To Configure a Virtual Machine</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="second.html#create-a-virtual-machine">Create a virtual machine</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="debianinstall.html">How To Install a Debian 11</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-1-sistema-de-arranque">Step 1: Sistema de arranque</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-2-elija-el-idioma-para-la-instalacion-de-debian-11">Step 2: Elija el idioma para la instalación de Debian 11</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-3-seleccione-la-ubicacion-preferida">Step 3: Seleccione la ubicación preferida</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-4-seleccionar-diseno-de-teclado">Step 4: Seleccionar diseño de teclado</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-5-cconfiguracion-de-nombre-de-host-y-dominio">Step 5: CConfiguración de nombre de host y dominio</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-6-establecer-contrasena-de-usuario-raiz">Step 6: Establecer contraseña de usuario raíz</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-7-crear-usuario-local-y-configurar-su-contrasena">Step 7: Crear usuario local y configurar su contraseña</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-8-elija-el-metodo-de-particion">Step 8: Elija el método de partición</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-9-instalacion-iniciada">Step 9: Instalación iniciada</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-10-seleccion-del-espejo-de-debian-11">Step 10: Selección del espejo de Debian 11</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-11-encuesta-de-debian">Step 11: Encuesta de Debian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-12-seleccion-de-software">Step 12: Selección de software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-13-grub">Step 13: Grub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-13-finalizacion-de-la-instalacion">Step 13: Finalización de la instalación</a></li>
+<p>Esto usa la GPU.</p>
+<p>Mirar INSTALL para obtener el link del regressiontest.</p>
+<ul class="simple">
+<li><p>make -j &lt;n&gt; en donde n es el número de procesadores a utilizar</p></li>
+<li><p>make install</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="practicoIP.html">Práctico SSH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-0-obtener-privilegios-de-superusuario">Step 0: Obtener privilegios de superusuario</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-1-instalar-net-tools">Step 1: Instalar net-tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-2-instalar-build-essential">Step 2: Instalar build-essential</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-3-instalar-servidor-ssh">Step 3: Instalar servidor SSH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-5-verificar-el-estado-del-servidor">Step 5:  Verificar el estado del servidor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-6-cambiar-ip-maquina-virtual">Step 6: Cambiar ip máquina virtual</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-7-crear-el-puente-a-la-maquina-virtual">Step 7: Crear el puente a la máquina virtual</a></li>
+<p>Para actualizar el Colvars se debe descargar el paquete:</p>
+<p><a class="reference external" href="https://github.com/Colvars/colvars/blob/master/README.md#gromacs-colvars-releases">https://github.com/Colvars/colvars/blob/master/README.md#gromacs-colvars-releases</a></p>
+<ul class="simple">
+<li><p>Se descomprime</p></li>
+<li><p>cd DIR</p></li>
+<li><p>mkdir build &amp;&amp; cd build</p></li>
+<li><p>cmake .. -DCMAKE_INSTALL_PREFIX=/opt/gromacs/2020.5 -DGMX_MPI=on -DGMX_GPU=on -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpicxx -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_PATH=/opt/gromacs/</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="kernel_linux.html">How to compile the GNU/Linux Kernel</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#que-es-un-kernel">¿QUÉ ES UN KERNEL?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-0-instalar-los-pre-requisitos">Step 0: INSTALAR LOS PRE-REQUISITOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-1-descargar-codigo-fuente-del-kernel">Step 1: DESCARGAR CÓDIGO FUENTE DEL KERNEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-2-descomprimir-el-fichero-con-las-fuentes-del-kernel">Step 2: DESCOMPRIMIR EL FICHERO CON LAS FUENTES DEL KERNEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-3-entrar-en-el-directorio">Step 3: ENTRAR EN EL DIRECTORIO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-4-copiar-configuracion-del-kernel-actual">Step 4: COPIAR CONFIGURACIÓN DEL KERNEL ACTUAL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-4-configurar-el-kernel-a-nuestra-medida">Step 4: CONFIGURAR EL KERNEL A NUESTRA MEDIDA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-5-compilar-el-kernel">Step 5: COMPILAR EL KERNEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-7-instalacion-del-kernel">Step 7: INSTALACIÓN DEL KERNEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-8-reiniciar">Step 8: Reiniciar</a></li>
+<p>es la misma instrucción de la instalación.</p>
+<ul class="simple">
+<li><p>make -j &lt;n&gt;</p></li>
+<li><p>make install</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Compilar_GCC.html">How to compile GCC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Compilar_Cmake.html">How to compile CMAKE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Install_Gromacs.html">How to install Gromacs</a></li>
-</ul>
-</div>
+<p>Revisar con history posible instalaciones manuales de gcc y cmake</p>
 </section>
 
         </article>
@@ -267,16 +239,18 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="first.html">
+          
+          <a class="prev-page" href="Compilar_Cmake.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
-                  <span>Next</span>
+                  <span>Previous</span>
                 </div>
-                <div class="title">How To Install a Virtual Machine</div>
+                
+                <div class="title">How to compile CMAKE</div>
+                
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">

@@ -1,0 +1,361 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Práctico SSH" href="practicoIP.html" />
+
+    <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
+        <title>How to compile the GNU/Linux Kernel - How to Do activity Virtual Machine 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">How to Do activity Virtual Machine 0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">How to Do activity Virtual Machine 0.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="first.html">How To Install a Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">How To Configure a Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debianinstall.html">How To Install a Debian 11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practicoIP.html">Práctico SSH</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">How to compile the GNU/Linux Kernel</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="how-to-compile-the-gnu-linux-kernel">
+<h1>How to compile the GNU/Linux Kernel<a class="headerlink" href="#how-to-compile-the-gnu-linux-kernel" title="Permalink to this heading">#</a></h1>
+<section id="que-es-un-kernel">
+<h2>¿QUÉ ES UN KERNEL?<a class="headerlink" href="#que-es-un-kernel" title="Permalink to this heading">#</a></h2>
+<p>Linux comienza en 1991 como un proyecto personal del estudiante finlandés Linus Torvalds: crear un nuevo núcleo de sistema operativo libre. El núcleo (kernel) Linux resultante ha estado marcado por un crecimiento constante a lo largo de su historia. Desde el lanzamiento inicial de su código fuente en 1991, ha crecido de una pequeña cantidad de archivos C bajo una licencia que prohíbe la distribución comercial, a la versión 5.6 en 2020 con más de 33,14 millones de líneas de código fuente, sin contar comentarios,​ bajo la GNU General Public License v2.2​.</p>
+</section>
+<section id="step-0-instalar-los-pre-requisitos">
+<h2>Step 0: INSTALAR LOS PRE-REQUISITOS<a class="headerlink" href="#step-0-instalar-los-pre-requisitos" title="Permalink to this heading">#</a></h2>
+<p>Antes de comenzar la compilación del kernel y su personalización, deberemos tener instalados una serie de paquetes en el sistema.
+Para ello, si estamos en una distribución de tipo Debian/Ubuntu ejecutaremos e instalaremos los siguientes paquetes de una sola vez:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get -y install build-essential libncurses-dev libncurses-dev flex bc bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf
+</pre></div>
+</div>
+</section>
+<section id="step-1-descargar-codigo-fuente-del-kernel">
+<h2>Step 1: DESCARGAR CÓDIGO FUENTE DEL KERNEL<a class="headerlink" href="#step-1-descargar-codigo-fuente-del-kernel" title="Permalink to this heading">#</a></h2>
+<p>Descargaremos la versión que queremos de kernel de su web oficial <a class="reference external" href="https://www.kernel.org/">https://www.kernel.org/</a>, en este caso descargaremos la versión 5.10.13. Copiaremos la dirección de descarga para descargarlo directamente en consola con wget.</p>
+<img alt="_images/kernell.png" src="_images/kernell.png" />
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ wget &quot;https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.10.13.tar.xz&quot;
+</pre></div>
+</div>
+</section>
+<section id="step-2-descomprimir-el-fichero-con-las-fuentes-del-kernel">
+<h2>Step 2: DESCOMPRIMIR EL FICHERO CON LAS FUENTES DEL KERNEL<a class="headerlink" href="#step-2-descomprimir-el-fichero-con-las-fuentes-del-kernel" title="Permalink to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ tar avxf linux-5.10.13.tar.xz
+</pre></div>
+</div>
+</section>
+<section id="step-3-entrar-en-el-directorio">
+<h2>Step 3: ENTRAR EN EL DIRECTORIO<a class="headerlink" href="#step-3-entrar-en-el-directorio" title="Permalink to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ cd linux-5.10.13/
+</pre></div>
+</div>
+</section>
+<section id="step-4-copiar-configuracion-del-kernel-actual">
+<h2>Step 4: COPIAR CONFIGURACIÓN DEL KERNEL ACTUAL<a class="headerlink" href="#step-4-copiar-configuracion-del-kernel-actual" title="Permalink to this heading">#</a></h2>
+<p>Realizar la configuración desde 0 de las opciones es casi una opción “imposible” incluso para usuarios con nivel alto de conocimiento de GNU/Linux. Por eso, lo habitual es partir de una configuración funcional del kernel y a partir de ella ir eliminando elementos innecesarios o añadir aquellos que se necesitan.
+En este ejemplo, el kernel que estamos usando en Debian es 4.19.0-6-amd64 y lo que queremos hacer es compilar e instalar el 5.10.13:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ uname -a
+</pre></div>
+</div>
+<p>Para copiar la configuración del kernel y sus módulos actuales, nos situaremos dentro del directorio del kernel que hemos
+bajado y ejecutaremos el siguiente comando. Con este comando tendremos un fichero llamado .config con la misma configuración del
+kernel que estamos usando ahora mismo:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ cp /boot/config-$(uname -r) .config
+</pre></div>
+</div>
+</section>
+<section id="step-4-configurar-el-kernel-a-nuestra-medida">
+<h2>Step 4: CONFIGURAR EL KERNEL A NUESTRA MEDIDA<a class="headerlink" href="#step-4-configurar-el-kernel-a-nuestra-medida" title="Permalink to this heading">#</a></h2>
+<p>Este paso sin suda es el mas importante de todos. Aquí es cuando seleccionamos que opciones queremos soporte nuestro kernel o cuales queremos que no. Cuales queremos integrar dentro del kernel o cuales queremos que estén como módulos.</p>
+<p>Aunque hay varias formas de mostrar la configuración del kernel, la mas habitual esa usar “make menuconfig” desde un terminal, ya que su uso es muy cómodo, rápido y realmente sencillo de usar con las flechas , el tabulador y la barra espaciadora.</p>
+<p>Por defecto, al lanzar “make menuconfig”, leerá el fichero .config en el directorio de las fuentes del kernel. Por tanto, como ya hemos copiado el fichero del kernel actual (ver punto anterior) al fichero .config, tan solo debemos ejecutar el siguiente</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ make menuconfig
+</pre></div>
+</div>
+<p>Saldrá un menú como este:</p>
+<img alt="_images/makeautoconfig.png" src="_images/makeautoconfig.png" />
+</section>
+<section id="step-5-compilar-el-kernel">
+<h2>Step 5: COMPILAR EL KERNEL<a class="headerlink" href="#step-5-compilar-el-kernel" title="Permalink to this heading">#</a></h2>
+<p>na vez tenemos nuestra configuración hecha, deberemos ejecutar el siguiente comando e ir a tomar un café,
+porque la compilación tarda bastante. Principalmente la compilación se demora por la cantidad de módulos y opciones a compilar
+y por el hardware que estemos usando. para compilar ejecutaremos lo siguiente:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ make
+</pre></div>
+</div>
+<p>Step 6: INSTALACIÓN DE LOS MÓDULOS</p>
+<p>Una vez finalizada la compilación del kernel y los módulos, es hora de instalar los módulos con el siguiente comando:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ make modules_install
+</pre></div>
+</div>
+</section>
+<section id="step-7-instalacion-del-kernel">
+<h2>Step 7: INSTALACIÓN DEL KERNEL<a class="headerlink" href="#step-7-instalacion-del-kernel" title="Permalink to this heading">#</a></h2>
+<p>Tras instalar los módulos, instalaremos el kernel con el siguiente comando:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ make install
+</pre></div>
+</div>
+</section>
+<section id="step-8-reiniciar">
+<h2>Step 8: Reiniciar<a class="headerlink" href="#step-8-reiniciar" title="Permalink to this heading">#</a></h2>
+<p>El último paso que queda es reiniciar y arrancar GNU/Linux y… cruzar los dedos! … no querrás ver un Kernel Panic! :D Por eso te recomiendo no borrar los kernels antiguos y tener siempre varios kernels (aunque sean viejos) que funcionen correctamente.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="practicoIP.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Práctico SSH</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, bnjmn
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">How to compile the GNU/Linux Kernel</a><ul>
+<li><a class="reference internal" href="#que-es-un-kernel">¿QUÉ ES UN KERNEL?</a></li>
+<li><a class="reference internal" href="#step-0-instalar-los-pre-requisitos">Step 0: INSTALAR LOS PRE-REQUISITOS</a></li>
+<li><a class="reference internal" href="#step-1-descargar-codigo-fuente-del-kernel">Step 1: DESCARGAR CÓDIGO FUENTE DEL KERNEL</a></li>
+<li><a class="reference internal" href="#step-2-descomprimir-el-fichero-con-las-fuentes-del-kernel">Step 2: DESCOMPRIMIR EL FICHERO CON LAS FUENTES DEL KERNEL</a></li>
+<li><a class="reference internal" href="#step-3-entrar-en-el-directorio">Step 3: ENTRAR EN EL DIRECTORIO</a></li>
+<li><a class="reference internal" href="#step-4-copiar-configuracion-del-kernel-actual">Step 4: COPIAR CONFIGURACIÓN DEL KERNEL ACTUAL</a></li>
+<li><a class="reference internal" href="#step-4-configurar-el-kernel-a-nuestra-medida">Step 4: CONFIGURAR EL KERNEL A NUESTRA MEDIDA</a></li>
+<li><a class="reference internal" href="#step-5-compilar-el-kernel">Step 5: COMPILAR EL KERNEL</a></li>
+<li><a class="reference internal" href="#step-7-instalacion-del-kernel">Step 7: INSTALACIÓN DEL KERNEL</a></li>
+<li><a class="reference internal" href="#step-8-reiniciar">Step 8: Reiniciar</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>

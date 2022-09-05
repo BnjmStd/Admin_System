@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="How To Install a Virtual Machine" href="first.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="How to compile the GNU/Linux Kernel" href="kernel_linux.html" /><link rel="prev" title="How To Install a Debian 11" href="debianinstall.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
-        <title>How to Do activity Virtual Machine 0.1 documentation</title>
+        <title>Práctico SSH - How to Do activity Virtual Machine 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">How to Do activity Virtual Machine 0.1 documentation</div></a>
+      <a href="index.html"><div class="brand">How to Do activity Virtual Machine 0.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -143,7 +143,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
   <span class="sidebar-brand-text">How to Do activity Virtual Machine 0.1 documentation</span>
@@ -155,15 +155,12 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="first.html">How To Install a Virtual Machine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="second.html">How To Configure a Virtual Machine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debianinstall.html">How To Install a Debian 11</a></li>
-<li class="toctree-l1"><a class="reference internal" href="practicoIP.html">Práctico SSH</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Práctico SSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kernel_linux.html">How to compile the GNU/Linux Kernel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Compilar_GCC.html">How to compile GCC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Compilar_Cmake.html">How to compile CMAKE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Install_Gromacs.html">How to install Gromacs</a></li>
 </ul>
 
 </div>
@@ -191,75 +188,77 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="welcome-to-ssh-activity-s-documentation">
-<h1>Welcome to SSH_activity’s documentation  !<a class="headerlink" href="#welcome-to-ssh-activity-s-documentation" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="first.html">How To Install a Virtual Machine</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="first.html#kvm-kernel-virtual-machine">KVM – Kernel Virtual Machine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first.html#step-1-check-virtualization-support-in-ubuntu">Step 1: Check Virtualization Support in Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first.html#virt-manager">Virt-Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first.html#libvirt">libvirt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first.html#step-2-how-to-install-virt-manager">Step 2: How to install Virt-Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first.html#step-3-create-a-virtual-machine">Step 3: Create a virtual machine</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="second.html">How To Configure a Virtual Machine</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="second.html#create-a-virtual-machine">Create a virtual machine</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="debianinstall.html">How To Install a Debian 11</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-1-sistema-de-arranque">Step 1: Sistema de arranque</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-2-elija-el-idioma-para-la-instalacion-de-debian-11">Step 2: Elija el idioma para la instalación de Debian 11</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-3-seleccione-la-ubicacion-preferida">Step 3: Seleccione la ubicación preferida</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-4-seleccionar-diseno-de-teclado">Step 4: Seleccionar diseño de teclado</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-5-cconfiguracion-de-nombre-de-host-y-dominio">Step 5: CConfiguración de nombre de host y dominio</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-6-establecer-contrasena-de-usuario-raiz">Step 6: Establecer contraseña de usuario raíz</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-7-crear-usuario-local-y-configurar-su-contrasena">Step 7: Crear usuario local y configurar su contraseña</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-8-elija-el-metodo-de-particion">Step 8: Elija el método de partición</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-9-instalacion-iniciada">Step 9: Instalación iniciada</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-10-seleccion-del-espejo-de-debian-11">Step 10: Selección del espejo de Debian 11</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-11-encuesta-de-debian">Step 11: Encuesta de Debian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-12-seleccion-de-software">Step 12: Selección de software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-13-grub">Step 13: Grub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debianinstall.html#step-13-finalizacion-de-la-instalacion">Step 13: Finalización de la instalación</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="practicoIP.html">Práctico SSH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-0-obtener-privilegios-de-superusuario">Step 0: Obtener privilegios de superusuario</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-1-instalar-net-tools">Step 1: Instalar net-tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-2-instalar-build-essential">Step 2: Instalar build-essential</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-3-instalar-servidor-ssh">Step 3: Instalar servidor SSH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-5-verificar-el-estado-del-servidor">Step 5:  Verificar el estado del servidor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-6-cambiar-ip-maquina-virtual">Step 6: Cambiar ip máquina virtual</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practicoIP.html#step-7-crear-el-puente-a-la-maquina-virtual">Step 7: Crear el puente a la máquina virtual</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="kernel_linux.html">How to compile the GNU/Linux Kernel</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#que-es-un-kernel">¿QUÉ ES UN KERNEL?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-0-instalar-los-pre-requisitos">Step 0: INSTALAR LOS PRE-REQUISITOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-1-descargar-codigo-fuente-del-kernel">Step 1: DESCARGAR CÓDIGO FUENTE DEL KERNEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-2-descomprimir-el-fichero-con-las-fuentes-del-kernel">Step 2: DESCOMPRIMIR EL FICHERO CON LAS FUENTES DEL KERNEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-3-entrar-en-el-directorio">Step 3: ENTRAR EN EL DIRECTORIO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-4-copiar-configuracion-del-kernel-actual">Step 4: COPIAR CONFIGURACIÓN DEL KERNEL ACTUAL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-4-configurar-el-kernel-a-nuestra-medida">Step 4: CONFIGURAR EL KERNEL A NUESTRA MEDIDA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-5-compilar-el-kernel">Step 5: COMPILAR EL KERNEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-7-instalacion-del-kernel">Step 7: INSTALACIÓN DEL KERNEL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kernel_linux.html#step-8-reiniciar">Step 8: Reiniciar</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Compilar_GCC.html">How to compile GCC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Compilar_Cmake.html">How to compile CMAKE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Install_Gromacs.html">How to install Gromacs</a></li>
-</ul>
+          <section id="practico-ssh">
+<h1>Práctico SSH<a class="headerlink" href="#practico-ssh" title="Permalink to this heading">#</a></h1>
+<section id="step-0-obtener-privilegios-de-superusuario">
+<h2>Step 0: Obtener privilegios de superusuario<a class="headerlink" href="#step-0-obtener-privilegios-de-superusuario" title="Permalink to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ sudo su-
+</pre></div>
 </div>
+</section>
+<section id="step-1-instalar-net-tools">
+<h2>Step 1: Instalar net-tools<a class="headerlink" href="#step-1-instalar-net-tools" title="Permalink to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ apt-get install net-tools
+</pre></div>
+</div>
+</section>
+<section id="step-2-instalar-build-essential">
+<h2>Step 2: Instalar build-essential<a class="headerlink" href="#step-2-instalar-build-essential" title="Permalink to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ apt-get install build-essential
+</pre></div>
+</div>
+</section>
+<section id="step-3-instalar-servidor-ssh">
+<h2>Step 3: Instalar servidor SSH<a class="headerlink" href="#step-3-instalar-servidor-ssh" title="Permalink to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ apt install openssh-server
+</pre></div>
+</div>
+</section>
+<section id="step-5-verificar-el-estado-del-servidor">
+<h2>Step 5:  Verificar el estado del servidor<a class="headerlink" href="#step-5-verificar-el-estado-del-servidor" title="Permalink to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ systemctl status sshd
+</pre></div>
+</div>
+<p>Sin embargo, si no se está ejecutando activamente en su sistema, ejecute:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ systemctl enable --now sshd
+</pre></div>
+</div>
+</section>
+<section id="step-6-cambiar-ip-maquina-virtual">
+<h2>Step 6: Cambiar ip máquina virtual<a class="headerlink" href="#step-6-cambiar-ip-maquina-virtual" title="Permalink to this heading">#</a></h2>
+<p>El comando ifconfig en Linux es una herramienta para gestionar la interfaz de red.
+Con ifconfig puedes asignar direcciones IP, habilitar o deshabilitar interfaces de red, administrar la caché ARP y mucho más.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ ifconfig -a
+</pre></div>
+</div>
+<p>Como ya conocemos nuestra IP, podemos editar el archivo:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ vim /etc/networks/interfaces
+</pre></div>
+</div>
+<p>Como se observa en la imagen de abajo se agregan valores:</p>
+<img alt="_images/ip.png" src="_images/ip.png" />
+<ul class="simple">
+<li><p>Los valores agregados al archivo “interfaces”, son a partir de la intrucción del práctico.</p></li>
+</ul>
+</section>
+<section id="step-7-crear-el-puente-a-la-maquina-virtual">
+<h2>Step 7: Crear el puente a la máquina virtual<a class="headerlink" href="#step-7-crear-el-puente-a-la-maquina-virtual" title="Permalink to this heading">#</a></h2>
+<p>Como se conoce la ip de nuestra maquina virtual, en nuestra maquina local editaremos el archivo:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ vim .ssh/config
+</pre></div>
+</div>
+<img alt="_images/config.png" src="_images/config.png" />
+<p>Los valores variarán dependiendo los valores ingresados en el archivo:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ vim /etc/networks/interfaces
+</pre></div>
+</div>
+</section>
 </section>
 
         </article>
@@ -267,16 +266,26 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="first.html">
+          <a class="next-page" href="kernel_linux.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">How To Install a Virtual Machine</div>
+                <div class="title">How to compile the GNU/Linux Kernel</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          
+          <a class="prev-page" href="debianinstall.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">How To Install a Debian 11</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -297,8 +306,33 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Práctico SSH</a><ul>
+<li><a class="reference internal" href="#step-0-obtener-privilegios-de-superusuario">Step 0: Obtener privilegios de superusuario</a></li>
+<li><a class="reference internal" href="#step-1-instalar-net-tools">Step 1: Instalar net-tools</a></li>
+<li><a class="reference internal" href="#step-2-instalar-build-essential">Step 2: Instalar build-essential</a></li>
+<li><a class="reference internal" href="#step-3-instalar-servidor-ssh">Step 3: Instalar servidor SSH</a></li>
+<li><a class="reference internal" href="#step-5-verificar-el-estado-del-servidor">Step 5:  Verificar el estado del servidor</a></li>
+<li><a class="reference internal" href="#step-6-cambiar-ip-maquina-virtual">Step 6: Cambiar ip máquina virtual</a></li>
+<li><a class="reference internal" href="#step-7-crear-el-puente-a-la-maquina-virtual">Step 7: Crear el puente a la máquina virtual</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

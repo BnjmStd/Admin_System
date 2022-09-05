@@ -1,4 +1,4 @@
-Práctico
+Práctico SSH
 ========================================
 
 Step 0: Obtener privilegios de superusuario
@@ -48,5 +48,41 @@ Sin embargo, si no se está ejecutando activamente en su sistema, ejecute:
 Step 6: Cambiar ip máquina virtual
 -----------------------------------
 
+El comando ifconfig en Linux es una herramienta para gestionar la interfaz de red.
+Con ifconfig puedes asignar direcciones IP, habilitar o deshabilitar interfaces de red, administrar la caché ARP y mucho más.
+
+.. code-block:: text
+
+  $ ifconfig -a
+
+
+Como ya conocemos nuestra IP, podemos editar el archivo:
+
+.. code-block:: text
+
+  $ vim /etc/networks/interfaces
+
+
+Como se observa en la imagen de abajo se agregan valores:
+
+.. image:: /images/practicoIP/ip.png
+
+
+* Los valores agregados al archivo "interfaces", son a partir de la intrucción del práctico.
+
 Step 7: Crear el puente a la máquina virtual
 ---------------------------------------------
+
+Como se conoce la ip de nuestra maquina virtual, en nuestra maquina local editaremos el archivo:
+
+.. code-block:: text
+
+  $ vim .ssh/config
+
+.. image:: /images/practicoIP/config.png
+
+Los valores variarán dependiendo los valores ingresados en el archivo:
+
+.. code-block:: text
+
+  $ vim /etc/networks/interfaces

@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to SSH_activity's documentation!
-========================================
+Welcome to SSH_activity's documentation  !
+==========================================
 
 .. toctree::
    :maxdepth: 5
@@ -13,5 +13,9 @@ Welcome to SSH_activity's documentation!
    first.rst
    second.rst
    debianinstall.rst
-   practico.rst
+   practicoIP.rst
+   kernel_linux.rst
+   Compilar_GCC.rst
+   Compilar_Cmake.rst
+   Install_Gromacs.rst
 ..
